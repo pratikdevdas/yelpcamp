@@ -6,9 +6,16 @@
     <title>Campground Show </title>
 </head>
 <body>
-    <h1>CampGround Show</h1>
-    <% for (let campground of campgrounds){ %> 
-    <li><a href="/campgrounds/<%campgrounds.title%>"><%= campground.title %></a></li>
-    <% } %> 
+    <h1><%= campground.title %> </h1>
+    <h3><%= campground.location %> </h3>
+    <a href="/campgrounds/<%=campground._id %>/edit">Edit</a>
+    
+    <p><form action="/campgrounds/<%=campground._id%>?_method=DELETE" method="POST">
+        <button>DELETE</button>
+    </form></p>
+
+    <footer>
+        <a href="/campgrounds">All campgrounds</a>
+    </footer>
 </body>
 </html>
